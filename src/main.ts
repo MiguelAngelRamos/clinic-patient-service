@@ -17,7 +17,7 @@ async function bootstrap() {
     credentials: true,
   });
 
-  app.setGlobalPrefix("patients");
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
