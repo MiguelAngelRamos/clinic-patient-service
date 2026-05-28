@@ -49,13 +49,13 @@ export class Patient {
   })
   gender!: Gender;
 
-  @Column({ length: 20, nullable: true })
+  @Column({ type: "varchar", length: 20, nullable: true })
   phone!: string | null;
 
-  @Column({ name: "emergency_contact_name", length: 100, nullable: true })
+  @Column({ name: "emergency_contact_name", type: "varchar", length: 100, nullable: true })
   emergencyContactName!: string | null;
 
-  @Column({ name: "emergency_contact_phone", length: 20, nullable: true })
+  @Column({ name: "emergency_contact_phone", type: "varchar", length: 20, nullable: true })
   emergencyContactPhone!: string | null;
 
   @Column({ type: "text", nullable: true })
