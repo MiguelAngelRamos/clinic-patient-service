@@ -26,6 +26,9 @@ import { PatientsModule } from "./patients/patients.module";
         password: configService.get<string>("database.password"),
         database: configService.get<string>("database.name"),
         entities: [__dirname + "/**/*.entity.{ts,js}"],
+        // Registra las migraciones disponibles. NO activamos migrationsRun:
+        // se ejecutan manualmente y de forma controlada en el despliegue.
+        migrations: [__dirname + "/database/migrations/*.{ts,js}"],
         synchronize: false,
         logging: configService.get<string>("app.nodeEnv") === "development",
         ssl: configService.get<boolean>("database.ssl") ?? false,
